@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-11",
+ "updated": "2026-10-12T01:17:09.807Z",
  "products": [
   {
    "id": "P001",
@@ -370,43 +370,6 @@
    "description": "Little stuffed elephant in patterned cotton, on a key ring.",
    "tag": "",
    "image": "elephant-keychains.jpg"
-  }
- ],
- "categories": [
-  {
-   "id": "denim",
-   "name": "Upcycled denim",
-   "blurb": "Bags and pouches from old jeans"
-  },
-  {
-   "id": "bags",
-   "name": "Embroidered bags",
-   "blurb": "Backpacks, clutches, coin pouches"
-  },
-  {
-   "id": "clothing",
-   "name": "Clothing",
-   "blurb": "Elephant pants and more"
-  },
-  {
-   "id": "resin-home",
-   "name": "Resin coasters & trays",
-   "blurb": "Coasters, trays, bud vases"
-  },
-  {
-   "id": "resin-gifts",
-   "name": "Resin gifts",
-   "blurb": "Keychains and pens"
-  },
-  {
-   "id": "jewelry",
-   "name": "Jewelry",
-   "blurb": "Earrings, necklaces, bracelets"
-  },
-  {
-   "id": "gifts",
-   "name": "Gifts & keepsakes",
-   "blurb": "Elephant keychains, bookmarks"
   }
  ]
 }
