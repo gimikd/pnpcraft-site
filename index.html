@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Pinpanacraft: recycled, handmade, unique crafts in Tampa. Reserve online, pick up at the Ybor City Market.">
+<title>Pinpanacraft</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}[hidden]{display:none!important}
+/* Layout: grained paper page; centered wordmark header with live pickup count; thin caps headline over a real booth-photo collage; outlined feature tiles; circle-framed "what we make" row; photo product grid; denim-navy reserve banner with the pickup form; caps statement; market info. Single light look by choice. Colors pulled from the booth: canopy pink, denim navy, embroidery gold. */
+:root {
+  --paper: #f3ebdc;
+  --card: #fbf6ec;
+  --ink: #1d2738;
+  --muted: #5f6474;
+  --navy: #1f3a5f;
+  --navy-line: rgba(31,58,95,.32);
+  --pink: #d23a6b;
+  --pink-soft: #f6d3dc;
+  --blue-soft: #cfe0ea;
+  --gold: #c08a1e;
+  --gold-bright: #f0c35a;
+  --f-display: "Italiana", "Bodoni 72", Didot, Georgia, serif;
+  --f-body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .28 0 0 0 0 .22 0 0 0 .14 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.65; padding-inline: 16px; overflow-x: hidden;
+}
+a { color: inherit; }
+p { margin: 0; }
+img { display: block; max-width: 100%; }
+h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
+:focus-visible { outline: 3px solid var(--pink); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1120px; margin-inline: auto; }
+.caps { font-family: var(--f-display); text-transform: uppercase; color: var(--navy); line-height: 1.02; letter-spacing: .01em; }
+.caps em { font-style: normal; color: var(--pink); }
+.h2 { font-size: clamp(2rem, 4.6vw, 3rem); }
+.btn { display: inline-flex; align-items: center; justify-content: center; font: 500 .85rem var(--f-body); text-decoration: none; padding: 12px 26px; border-radius: 6px; border: 1px solid var(--navy); background: var(--navy); color: #fbf6ec; cursor: pointer; transition: filter .15s; }
+.btn:hover { filter: brightness(1.18); }
+.btn.pink { background: var(--pink); border-color: var(--pink); }
+.btn.line { background: transparent; color: var(--navy); }
+.btn.line:hover { background: rgba(31,58,95,.07); filter: none; }
+
+/* header */
+.top { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--navy-line); font-size: .8rem; }
+.top ul { list-style: none; display: flex; gap: 6px 26px; margin: 0; padding: 0; }
+.top .right { justify-self: end; display: flex; gap: 6px 22px; align-items: center; }
+.top a { text-decoration: none; padding: 4px 0; }
+.top a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.logo { display: grid; justify-items: center; gap: 0; text-decoration: none; text-align: center; }
+.logo b { font: 400 1.7rem var(--f-display); color: var(--navy); letter-spacing: .04em; line-height: 1; }
+.logo span { font-size: .6rem; letter-spacing: .28em; text-transform: uppercase; color: var(--pink); margin-top: 4px; }
+.dot { display: inline-grid; place-items: center; min-width: 17px; height: 17px; padding-inline: 4px; border-radius: 999px; background: var(--pink); color: #fff; font-size: .66rem; font-weight: 600; margin-left: 4px; }
+
+/* hero */
+.hero { padding-block: 44px 28px; }
+.hero .line1 { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 18px 32px; }
+.hero h1 { font-size: clamp(2.4rem, 7vw, 5.8rem); }
+.hero .line2 { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 24px 40px; align-items: end; margin-top: 8px; }
+.hero .line2 p { font-size: .88rem; color: var(--muted); }
+.hero .line2 h1 { text-align: right; }
+.collage { margin-top: 30px; display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; aspect-ratio: 21 / 9; }
+.collage figure { margin: 0; border: 1px solid var(--navy-line); border-radius: 8px; overflow: hidden; position: relative; min-height: 0; }
+.collage figure:first-child { grid-row: span 2; }
+.collage img { width: 100%; height: 100%; object-fit: cover; }
+.collage figcaption { position: absolute; left: 12px; bottom: 12px; background: rgba(251,246,236,.92); color: var(--ink); font-size: .72rem; font-weight: 500; padding: 4px 10px; border-radius: 4px; }
+
+/* features */
+.feats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding-block: 16px 72px; }
+.feat { border: 1px solid var(--navy-line); border-radius: 8px; padding: 22px 12px 18px; display: grid; justify-items: center; gap: 8px; text-align: center; font-size: .8rem; font-weight: 500; }
+.feat svg { width: 40px; height: 40px; fill: none; stroke: var(--navy); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* sections */
+.sec { padding-block: 0 72px; }
+.sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px 24px; margin-bottom: 26px; }
+.sec-head p { font-size: .85rem; color: var(--muted); max-width: 44ch; }
+
+/* what we make: circle frames */
+.makes { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 28px 24px; }
+.make { flex: 0 1 200px; min-width: 0; }
+.make { padding: 0; border: 0; background: none; font: inherit; color: inherit; cursor: pointer; display: grid; justify-items: center; gap: 12px; text-align: center; }
+.disc { width: 100%; max-width: 200px; aspect-ratio: 1; border-radius: 50%; padding: 14px; background: var(--pink-soft); transition: transform .2s; }
+.make:nth-child(even) .disc { background: var(--blue-soft); }
+.disc img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+.make:hover .disc { transform: translateY(-4px) rotate(-2deg); }
+.make b { font-weight: 500; font-size: .95rem; }
+.make small { display: block; color: var(--muted); font-size: .76rem; margin-top: -8px; }
+
+/* products */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+#shop .sec-head { align-items: flex-start; }
+.chip { font: 500 .78rem var(--f-body); padding: 7px 16px; border-radius: 999px; border: 1px solid var(--navy); background: transparent; color: var(--navy); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--navy); color: #fbf6ec; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.item { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.item[hidden] { display: none; }
+.art { aspect-ratio: 1; border: 1px solid var(--navy-line); border-radius: 8px; overflow: hidden; position: relative; background: var(--card); }
+.art img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.item:hover .art img { transform: scale(1.04); }
+.tag.held { background: var(--navy); }
+.add:disabled { background: transparent; border: 1px solid var(--navy-line); color: var(--muted); cursor: default; }
+.empty-shop { grid-column: 1 / -1; color: var(--muted); padding-block: 24px; }
+.tag { position: absolute; top: 10px; left: 10px; background: var(--pink); color: #fff; font-size: .66rem; font-weight: 500; padding: 3px 9px; border-radius: 4px; letter-spacing: .04em; }
+.item h3 { font: 500 .86rem var(--f-body); margin-top: 10px; }
+.item p { font-size: .76rem; color: var(--muted); line-height: 1.5; }
+.price { font-weight: 600; font-size: 1.05rem; font-variant-numeric: tabular-nums; margin-top: 4px; }
+.add { align-self: flex-start; margin-top: 6px; font: 500 .78rem var(--f-body); padding: 8px 18px; border-radius: 6px; border: 0; background: var(--gold-bright); color: var(--ink); cursor: pointer; }
+.add:hover { filter: brightness(.95); }
+.add[aria-pressed="true"] { background: var(--navy); color: #fbf6ec; }
+
+/* banner with the pickup list */
+.banner { background: var(--navy); border-radius: 8px; padding: clamp(24px, 5vw, 56px); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 36px; align-items: center; color: #fbf6ec; margin-bottom: 72px; scroll-margin-top: 16px; }
+.banner h2 { font-family: var(--f-display); text-transform: uppercase; font-size: clamp(2rem, 4.8vw, 3.6rem); line-height: 1.02; color: #fbf6ec; }
+.banner h2 em { font-style: normal; color: var(--gold-bright); }
+.banner .lede { margin-top: 16px; font-size: .86rem; max-width: 38ch; opacity: .92; }
+.list { background: var(--card); color: var(--ink); border-radius: 8px; padding: 22px; }
+.list h3 { font: 600 .95rem var(--f-body); }
+.list > p { font-size: .76rem; color: var(--muted); margin-bottom: 12px; }
+.list ul { list-style: none; margin: 0 0 12px; padding: 0; display: grid; gap: 8px; min-height: 40px; }
+.list li { display: flex; justify-content: space-between; gap: 10px; padding-bottom: 6px; border-bottom: 1px dashed var(--navy-line); font-size: .85rem; }
+.list li.empty { border: 0; color: var(--muted); font-style: italic; }
+.total { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 14px; }
+.fields { display: grid; gap: 4px; margin-bottom: 14px; }
+.fields label { font-size: .72rem; font-weight: 500; color: var(--muted); margin-top: 6px; }
+.fields input, .fields select { font: inherit; font-size: .85rem; padding: 9px 11px; border: 1px solid var(--navy-line); border-radius: 6px; background: #fffdf8; color: var(--ink); width: 100%; }
+.list .btn { width: 100%; }
+.list .btn:disabled { opacity: .6; cursor: wait; }
+.note { font-size: .75rem; color: var(--muted); min-height: 1.3em; margin-top: 10px; }
+.note a { color: var(--pink); font-weight: 500; }
+
+/* statement */
+.statement { font-family: var(--f-display); text-transform: uppercase; font-size: clamp(1.6rem, 4.2vw, 3.3rem); line-height: 1.1; color: var(--navy); padding-block: 0 80px; }
+.statement span { display: block; }
+.statement .i2 { padding-left: clamp(0px, 14vw, 180px); }
+.statement .i3 { padding-left: clamp(0px, 4vw, 40px); }
+.statement em { font-style: normal; color: var(--pink); }
+
+/* market */
+.market { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; align-items: center; padding-bottom: 72px; scroll-margin-top: 16px; }
+.market figure { margin: 0; aspect-ratio: 4 / 3; border: 1px solid var(--navy-line); border-radius: 8px; overflow: hidden; }
+.market figure img { width: 100%; height: 100%; object-fit: cover; }
+.market .info { display: grid; gap: 18px; justify-items: start; }
+.market dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; font-size: .88rem; border-top: 1px solid var(--navy-line); padding-top: 16px; width: 100%; }
+.market dt { color: var(--muted); }
+.market dd { margin: 0; font-weight: 500; }
+.market .row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+footer { border-top: 1px solid var(--navy-line); padding-block: 22px 40px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: .76rem; color: var(--muted); }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .feats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .make { flex-basis: 42%; }
+  .banner, .market { grid-template-columns: minmax(0, 1fr); }
+  .hero .line2 { grid-template-columns: minmax(0, 1fr); }
+  .hero .line2 h1 { text-align: left; }
+}
+@media (max-width: 640px) {
+  .top { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 10px; }
+  .top .right { justify-self: center; }
+  .top ul { order: 3; }
+  .grid { gap: 14px; }
+  .collage { aspect-ratio: auto; grid-template-columns: 1fr 1fr; grid-template-rows: 230px 150px; }
+  .collage figure:first-child { grid-row: auto; grid-column: span 2; }
+}
+@media (prefers-reduced-motion: reduce) { .disc, .art img { transition: none; } }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <ul>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#market">Find us</a></li>
+    </ul>
+    <a class="logo" href="#top" aria-label="Pinpanacraft home">
+      <b>Pinpanacraft</b>
+      <span>Recycled · Handmade · Unique</span>
+    </a>
+    <div class="right">
+      <a href="#" class="fb-link" target="_blank" rel="noopener">Facebook</a>
+      <a href="#reserve">Pickup list<span class="dot" id="count">0</span></a>
+    </div>
+  </header>
+</div>
+
+<div class="wrap" id="top">
+  <section class="hero">
+    <div class="line1">
+      <h1 class="caps">Recycled into <em>something new</em></h1>
+      <a class="btn" href="#shop">Shop the collection</a>
+    </div>
+    <div class="line2">
+      <p>Handmade crafts from recycled rice bags and old jeans, resin art, jewelry and elephant pants. Find us at the Ybor City Market, or reserve online and pick up in person.</p>
+      <h1 class="caps">Pinpanacraft</h1>
+    </div>
+    <div class="collage">
+      <figure><img src="img/booth.jpg" alt="The Pinpanacraft booth at Ybor City Market under a pink canopy, with bags, jewelry and pants on display"><figcaption>Our booth at Ybor City Market</figcaption></figure>
+      <figure><img src="img/denim-pouches.jpg" alt="Upcycled denim pouches with a pink bow patch and pink pompom trim"></figure>
+      <figure><img src="img/backpack-embroidered.jpg" alt="Embroidered backpacks in gold and red"></figure>
+    </div>
+  </section>
+
+  <div class="feats">
+    <div class="feat"><svg viewBox="0 0 40 40"><path d="M10 14 A10 10 0 0 1 28 10 M30 26 A10 10 0 0 1 12 30"/><path d="M28 4 V10 H22 M12 36 V30 H18"/></svg>Recycled materials</div>
+    <div class="feat"><svg viewBox="0 0 40 40"><circle cx="13" cy="28" r="5"/><circle cx="27" cy="28" r="5"/><path d="M16 24 L28 6 M24 24 L12 6"/></svg>Made by hand</div>
+    <div class="feat"><svg viewBox="0 0 40 40"><path d="M20 35 C12 25 10 21 10 17 A10 10 0 0 1 30 17 C30 21 28 25 20 35Z"/><circle cx="20" cy="17" r="3.5"/></svg>Pickup at Ybor City Market</div>
+    <div class="feat"><svg viewBox="0 0 40 40"><path d="M20 32 C8 24 6 17 10 12 C13 8 18 9 20 13 C22 9 27 8 30 12 C34 17 32 24 20 32Z"/></svg>One of a kind</div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head"><h2 class="caps h2">What we make</h2><p>Tap one to see those pieces.</p></div>
+    <div class="makes" id="makes">
+      <button class="make" type="button" data-f="denim"><span class="disc"><img src="img/pouch-pink-flower.jpg" alt=""></span><b>Upcycled denim</b><small>Bags and pouches from old jeans</small></button>
+      <button class="make" type="button" data-f="bags"><span class="disc"><img src="img/backpack-embroidered.jpg" alt=""></span><b>Embroidered bags</b><small>Backpacks, clutches, coin pouches</small></button>
+      <button class="make" type="button" data-f="clothing"><span class="disc"><img src="img/pants-red-floral.jpg" alt=""></span><b>Clothing</b><small>Elephant pants and more</small></button>
+      <button class="make" type="button" data-f="resin-home"><span class="disc"><img src="img/resin-round-flower-coaster.jpg" alt=""></span><b>Resin coasters & trays</b><small>Coasters, trays, bud vases</small></button>
+      <button class="make" type="button" data-f="resin-gifts"><span class="disc"><img src="img/resin-keychain-cards.jpg" alt=""></span><b>Resin gifts</b><small>Keychains and pens</small></button>
+      <button class="make" type="button" data-f="jewelry"><span class="disc"><img src="img/earrings.jpg" alt=""></span><b>Jewelry</b><small>Earrings, necklaces, bracelets</small></button>
+      <button class="make" type="button" data-f="gifts"><span class="disc"><img src="img/elephant-keychains.jpg" alt=""></span><b>Gifts & keepsakes</b><small>Elephant keychains, bookmarks</small></button>
+    </div>
+  </section>
+
+  <section class="sec" id="shop" style="scroll-margin-top:16px">
+    <div class="sec-head">
+      <h2 class="caps h2">On the table</h2>
+      <div class="filters" role="group" aria-label="Filter items">
+        <button class="chip" type="button" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-f="denim" aria-pressed="false">Upcycled denim</button>
+        <button class="chip" type="button" data-f="bags" aria-pressed="false">Embroidered bags</button>
+        <button class="chip" type="button" data-f="clothing" aria-pressed="false">Clothing</button>
+        <button class="chip" type="button" data-f="resin-home" aria-pressed="false">Resin coasters & trays</button>
+        <button class="chip" type="button" data-f="resin-gifts" aria-pressed="false">Resin gifts</button>
+        <button class="chip" type="button" data-f="jewelry" aria-pressed="false">Jewelry</button>
+        <button class="chip" type="button" data-f="gifts" aria-pressed="false">Gifts & keepsakes</button>
+      </div>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"><p class="empty-shop">Loading the collection...</p></div>
+  </section>
+
+  <section class="banner" id="reserve">
+    <div>
+      <h2>Reserve online, <em>pick up</em> Saturday</h2>
+      <p class="lede">See something you like? Add it to your pickup list and send it. We get it by email, confirm with you, and hold it at the Ybor City Market. Nothing to pay until pickup.</p>
+    </div>
+    <aside class="list" aria-live="polite">
+      <h3>Your pickup list</h3>
+      <p>Held at the Ybor City Market booth.</p>
+      <ul id="picked"><li class="empty">Nothing reserved yet.</li></ul>
+      <div class="total"><span>Pay at pickup</span><span id="total">$0</span></div>
+      <div class="fields">
+        <label for="r-name">Your name</label>
+        <input id="r-name" type="text" autocomplete="name" placeholder="First and last name">
+        <label for="r-contact">Phone or email</label>
+        <input id="r-contact" type="text" inputmode="email" autocomplete="email" placeholder="So we can confirm, e.g. 813-555-0100">
+        <label for="r-day">Pickup Saturday</label>
+        <select id="r-day"></select>
+        <input id="r-website" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      </div>
+      <button class="btn pink" type="button" id="copy">Send reservation</button>
+      <p class="note" id="note"></p>
+    </aside>
+  </section>
+
+  <p class="statement">
+    <span>Old jeans and <em>rice bags,</em></span>
+    <span class="i2">cut, stitched and</span>
+    <span class="i3">given a <em>second life</em></span>
+    <span class="i2">in Ybor City</span>
+  </p>
+
+  <section class="market" id="market">
+    <figure><img src="img/resin-table.jpg" alt="A market table full of pink, blue and clear resin coasters and trays with pressed flowers"></figure>
+    <div class="info">
+      <h2 class="caps h2">Find us</h2>
+      <p>Look for the pink canopy. Say hello, try things on, and ask about custom pieces.</p>
+      <dl>
+        <dt>Market</dt><dd>Ybor City Market, Tampa, FL</dd>
+        <dt>Days and hours</dt><dd>Saturdays, add hours here</dd>
+        <dt>Booth</dt><dd>Add your booth number here</dd>
+        <dt>Follow</dt><dd>@pinpanacraft on Facebook and Instagram</dd>
+      </dl>
+      <div class="row">
+        <a class="btn fb-link" href="#" target="_blank" rel="noopener">Message us on Facebook</a>
+        <a class="btn line" href="https://www.instagram.com/pinpanacraft/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <footer>
+    <span>Pinpanacraft · pnpcraft.com · Tampa, Florida</span>
+    <span>Prices and availability can change at the booth.</span>
+  </footer>
+</div>
+
+<script>
+var FB_URL = "https://www.facebook.com/profile.php?id=100007642459053";
+// Reservations go to the store backend (Google Apps Script web app). Paste its /exec URL here
+// after deploying it (see SETUP.md, step 5). Leave empty to fall back to FormSubmit email.
+var BACKEND_URL = "";
+var FORMSUBMIT_URL = "https://formsubmit.co/ajax/phinphana2@gmail.com";
+var CATS = ["denim", "bags", "clothing", "resin-home", "resin-gifts", "jewelry", "gifts"];
+// The catalog lives in products.json, which the email-to-store robot keeps up to date.
+// FALLBACK is only used if products.json can't be loaded.
+var FALLBACK = [{"id": "P001", "status": "available", "name": "Denim pouch, pink flower", "category": "denim", "price": 15, "description": "Upcycled jeans, wrist strap, zip top.", "tag": "Upcycled", "image": "img/pouch-pink-flower.jpg"}, {"id": "P002", "status": "available", "name": "Denim pouch, bow patch", "category": "denim", "price": 15, "description": "Dark wash denim with a pink bow.", "tag": "", "image": "img/pouch-bow.jpg"}, {"id": "P003", "status": "available", "name": "Back-pocket denim pouch", "category": "denim", "price": 15, "description": "Made around the original jeans pocket.", "tag": "", "image": "img/pouch-pocket.jpg"}, {"id": "P004", "status": "available", "name": "Denim pouch, blue flowers", "category": "denim", "price": 15, "description": "Light wash with embroidered flowers.", "tag": "", "image": "img/pouch-blue-flowers.jpg"}, {"id": "P005", "status": "available", "name": "Embroidered backpack", "category": "bags", "price": 45, "description": "Bold embroidery in gold or red.", "tag": "Favorite", "image": "img/backpack-embroidered.jpg"}, {"id": "P006", "status": "available", "name": "Embroidered clutch", "category": "bags", "price": 20, "description": "Bright patterned zip clutch with pompoms.", "tag": "", "image": "img/clutches.jpg"}, {"id": "P007", "status": "available", "name": "Patterned shoulder bag", "category": "bags", "price": 25, "description": "Indigo-and-white geometric print.", "tag": "", "image": "img/bag-hmong-print.jpg"}, {"id": "P008", "status": "available", "name": "Resin keychain", "category": "resin-gifts", "price": 8, "description": "Clear resin with pressed flowers and color.", "tag": "", "image": "img/resin-keychains.jpg"}, {"id": "P009", "status": "available", "name": "Beaded bookmark", "category": "gifts", "price": 8, "description": "Metal bookmark with beads and a charm.", "tag": "", "image": "img/bookmarks.jpg"}, {"id": "P010", "status": "available", "name": "Gemstone chip bracelet", "category": "jewelry", "price": 12, "description": "Stretch bracelet in mixed stones.", "tag": "", "image": "img/bracelets.jpg"}, {"id": "P011", "status": "available", "name": "Charm earrings", "category": "jewelry", "price": 12, "description": "Silver-tone charms, many designs.", "tag": "", "image": "img/earrings.jpg"}, {"id": "P012", "status": "available", "name": "Denim pouch, lemon patch", "category": "denim", "price": 15, "description": "Mid wash denim with a lemon patch.", "tag": "", "image": "img/pouch-lemon.jpg"}, {"id": "P013", "status": "available", "name": "Blue glitter coaster set", "category": "resin-home", "price": 25, "description": "Set of coasters in blue resin with glass beads and glitter.", "tag": "Set", "image": "img/resin-blue-coaster-set.jpg"}, {"id": "P014", "status": "available", "name": "Round pressed-flower coaster", "category": "resin-home", "price": 12, "description": "Clear resin with dried flowers and a beaded rim.", "tag": "", "image": "img/resin-round-flower-coaster.jpg"}, {"id": "P015", "status": "available", "name": "Hexagon pressed-flower coaster", "category": "resin-home", "price": 12, "description": "Deep red pressed flower in clear resin, beaded edge.", "tag": "", "image": "img/resin-hex-flower-coaster.jpg"}, {"id": "P016", "status": "available", "name": "Wavy flower tray", "category": "resin-home", "price": 18, "description": "Cloud-shaped trinket tray with dried leaves and yellow beads.", "tag": "One of a kind", "image": "img/resin-wavy-tray.jpg"}, {"id": "P017", "status": "available", "name": "Heart trinket dish", "category": "resin-home", "price": 12, "description": "Clear heart dish with a pressed flower and colored beads.", "tag": "", "image": "img/resin-heart-dish.jpg"}, {"id": "P018", "status": "available", "name": "Pink heart tray", "category": "resin-home", "price": 15, "description": "Pink resin heart with baby's breath inside.", "tag": "", "image": "img/resin-pink-heart-tray.jpg"}, {"id": "P019", "status": "available", "name": "Pink square tray", "category": "resin-home", "price": 15, "description": "Pink resin tray scattered with pressed petals.", "tag": "", "image": "img/resin-pink-square-tray.jpg"}, {"id": "P020", "status": "available", "name": "Pink hexagon tray", "category": "resin-home", "price": 15, "description": "Pink resin with tiny green leaves and blue flowers.", "tag": "", "image": "img/resin-pink-hex-tray.jpg"}, {"id": "P021", "status": "available", "name": "Pressed-flower keychain", "category": "resin-gifts", "price": 8, "description": "Resin charm keychain with real flowers, on a gift card.", "tag": "", "image": "img/resin-keychain-cards.jpg"}, {"id": "P022", "status": "available", "name": "Tree of life earrings", "category": "jewelry", "price": 12, "description": "Large silver-tone tree of life drops.", "tag": "", "image": "img/earrings-tree-of-life.jpg"}, {"id": "P023", "status": "available", "name": "Black denim shoulder bag", "category": "denim", "price": 30, "description": "Black jeans turned shoulder bag, with a hand-stitched Hmong embroidery panel.", "tag": "Upcycled", "image": "img/bag-black-denim-embroidered.jpg"}, {"id": "P024", "status": "available", "name": "Denim tote with heart patches", "category": "denim", "price": 28, "description": "Mid wash denim tote with frayed heart patches and printed cotton straps.", "tag": "", "image": "img/tote-denim-hearts.jpg"}, {"id": "P025", "status": "available", "name": "Denim tote with embroidered band", "category": "denim", "price": 30, "description": "Light denim tote with a frayed top and a red cross-stitch band.", "tag": "", "image": "img/tote-denim-embroidered.jpg"}, {"id": "P026", "status": "available", "name": "Back-pocket denim tote", "category": "denim", "price": 25, "description": "Light wash tote made around a big jeans back pocket.", "tag": "", "image": "img/tote-denim-pocket.jpg"}, {"id": "P027", "status": "available", "name": "LAOS embroidered coin pouch", "category": "bags", "price": 10, "description": "Zip pouch with LAOS stitched on the front, many colors.", "tag": "", "image": "img/pouches-laos.jpg"}, {"id": "P028", "status": "available", "name": "Elephant pants, black peacock", "category": "clothing", "price": 15, "description": "Soft, loose pants with a smocked waist and peacock print. One size.", "tag": "", "image": "img/pants-black-peacock.jpg"}, {"id": "P029", "status": "available", "name": "Elephant pants, red floral", "category": "clothing", "price": 15, "description": "Deep red with an orange and gold flower print. One size.", "tag": "", "image": "img/pants-red-floral.jpg"}, {"id": "P030", "status": "available", "name": "Elephant pants, green mandala", "category": "clothing", "price": 15, "description": "Olive mandala print with a rust waistband. One size.", "tag": "", "image": "img/pants-green-mandala.jpg"}, {"id": "P031", "status": "available", "name": "Elephant pants, red and turquoise", "category": "clothing", "price": 15, "description": "Red mandala print with turquoise elephants. One size.", "tag": "", "image": "img/pants-red-elephant.jpg"}, {"id": "P032", "status": "available", "name": "Elephant pants, blue mandala", "category": "clothing", "price": 15, "description": "Teal and navy mandala print. One size.", "tag": "", "image": "img/pants-blue-mandala.jpg"}, {"id": "P033", "status": "available", "name": "Resin bud vase", "category": "resin-home", "price": 22, "description": "Colored resin frame holding a glass tube for a single stem.", "tag": "One of a kind", "image": "img/resin-bud-vases.jpg"}, {"id": "P034", "status": "available", "name": "Gold-flake resin pen", "category": "resin-gifts", "price": 8, "description": "Clear resin pen filled with gold flakes.", "tag": "", "image": "img/resin-pens-gold.jpg"}, {"id": "P035", "status": "available", "name": "Silver-tone pendant necklace", "category": "jewelry", "price": 15, "description": "Long chain with a round or triangle pendant.", "tag": "", "image": "img/necklaces-silver.jpg"}, {"id": "P036", "status": "available", "name": "Woven friendship bracelet", "category": "jewelry", "price": 5, "description": "Bright woven band with a slide tie.", "tag": "", "image": "img/bracelets-woven.jpg"}, {"id": "P037", "status": "available", "name": "Fabric elephant keychain", "category": "gifts", "price": 6, "description": "Little stuffed elephant in patterned cotton, on a key ring.", "tag": "", "image": "img/elephant-keychains.jpg"}];
+var ITEMS = [];
+var chosen = {};
+var grid = document.getElementById("grid");
+
+function esc(t) { return String(t == null ? "" : t).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+function isPhoneOrEmail(v) { v = String(v || "").trim(); return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) || /^\+?[\d\s().-]{10,20}$/.test(v) && v.replace(/\D/g, "").length >= 10 && v.replace(/\D/g, "").length <= 15; }
+function hasPrice(p) { return typeof p === "number" && isFinite(p); }
+function money(p) { return hasPrice(p) ? "$" + p : "Price at booth"; }
+function normalize(list) {
+  return list.filter(function (p) { return p && p.name && p.image && p.status !== "sold" && p.status !== "draft" && p.status !== "hidden"; })
+    .map(function (p) {
+      var price = (p.price === "" || p.price == null || isNaN(Number(p.price))) ? null : Number(p.price);
+      return { id: String(p.id), name: String(p.name), cat: CATS.indexOf(p.category) > -1 ? p.category : "gifts", price: price,
+        img: String(p.image), d: p.description || "", held: p.status === "reserved", tag: p.status === "reserved" ? "On hold" : (p.tag || "") };
+    });
+}
+function render() {
+  grid.innerHTML = ITEMS.length ? ITEMS.map(function (it) {
+    return '<article class="item" data-cat="' + it.cat + '"><div class="art"><img src="' + esc(it.img) + '" alt="' + esc(it.name) + '" loading="lazy">' +
+      (it.tag ? '<span class="tag' + (it.held ? ' held' : '') + '">' + esc(it.tag) + '</span>' : '') + '</div>' +
+      '<h3>' + esc(it.name) + '</h3><p>' + esc(it.d) + '</p><span class="price">' + money(it.price) + '</span>' +
+      (it.held ? '<button class="add" type="button" disabled>On hold</button>'
+               : '<button class="add" type="button" data-id="' + esc(it.id) + '" aria-pressed="false">Reserve</button>') + '</article>';
+  }).join("") : '<p class="empty-shop">New pieces are on the way. Check back soon, or visit the booth on Saturday.</p>';
+  var active = document.querySelector('.chip[aria-pressed="true"]');
+  setFilter(active ? active.getAttribute("data-f") : "all");
+  update();
+}
+function loadProducts() {
+  fetch("products.json?v=" + Date.now(), { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) { ITEMS = normalize(data.products || []); })
+    .catch(function () { ITEMS = normalize(FALLBACK); })
+    .then(function () { chosen = {}; render(); });
+}
+
+function setFilter(f) {
+  document.querySelectorAll(".chip").forEach(function (o) { o.setAttribute("aria-pressed", o.getAttribute("data-f") === f); });
+  grid.querySelectorAll(".item").forEach(function (i) { i.hidden = !(f === "all" || i.getAttribute("data-cat") === f); });
+}
+function update() {
+  var sum = 0, n = 0, rows = [];
+  ITEMS.forEach(function (it) {
+    var on = !!chosen[it.id];
+    var b = grid.querySelector('[data-id="' + it.id + '"]');
+    if (b) { b.setAttribute("aria-pressed", on); b.textContent = on ? "Reserved" : "Reserve"; }
+    if (on) { if (hasPrice(it.price)) sum += it.price; n++; rows.push('<li><span>' + esc(it.name) + '</span><span>' + money(it.price) + '</span></li>'); }
+  });
+  document.getElementById("picked").innerHTML = rows.length ? rows.join("") : '<li class="empty">Nothing reserved yet.</li>';
+  document.getElementById("total").textContent = "$" + sum;
+  document.getElementById("count").textContent = n;
+}
+grid.addEventListener("click", function (e) {
+  var b = e.target.closest(".add"); if (!b) return;
+  var id = b.getAttribute("data-id");
+  if (chosen[id]) delete chosen[id]; else chosen[id] = true;
+  update();
+});
+document.querySelectorAll(".chip").forEach(function (c) {
+  c.addEventListener("click", function () { setFilter(c.getAttribute("data-f")); });
+});
+document.getElementById("makes").addEventListener("click", function (e) {
+  var c = e.target.closest(".make"); if (!c) return;
+  setFilter(c.getAttribute("data-f"));
+  document.getElementById("shop").scrollIntoView({ behavior: "smooth" });
+});
+document.getElementById("copy").addEventListener("click", function () {
+  var note = document.getElementById("note");
+  var picks = ITEMS.filter(function (i) { return chosen[i.id]; });
+  if (!picks.length) { note.textContent = "Reserve at least one item first."; return; }
+  var name = document.getElementById("r-name").value.trim();
+  var contact = document.getElementById("r-contact").value.trim();
+  if (!name) { note.textContent = "Add your name so we know who the order is for."; return; }
+  if (!isPhoneOrEmail(contact)) { note.textContent = "Add a phone number (10 digits) or an email address so we can confirm."; return; }
+  var day = document.getElementById("r-day").value;
+  var total = picks.reduce(function (s, i) { return s + (hasPrice(i.price) ? i.price : 0); }, 0);
+  var list = picks.map(function (i) { return i.name + " [" + i.id + "] (" + money(i.price) + ")"; }).join(", ");
+  var text = "Hi Pinpanacraft! Please hold these for me at the Ybor City Market on " + day + ": " + list +
+    ". Total about $" + total + ", paying at pickup. Name: " + name + ". Contact: " + contact + ".";
+  var btn = this, copied = false;
+  try { navigator.clipboard.writeText(text).then(function () { copied = true; }, function () {}); } catch (err) {}
+  btn.disabled = true; note.textContent = "Sending your reservation...";
+  var hp = (document.getElementById("r-website") || {}).value || "";
+  var send = BACKEND_URL
+    ? fetch(BACKEND_URL, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ name: name, contact: contact, pickup_day: day, website: hp, items: picks.map(function (i) { return i.id; }) }) })
+        .then(function (r) { return r.json(); })
+    : fetch(FORMSUBMIT_URL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ _subject: "New Pinpanacraft reservation: " + name + " for " + day, _template: "table", _captcha: "false", _honey: hp,
+          name: name, contact: contact, pickup_day: day, items: list, total: "$" + total + " (pay at pickup)", message: text }) })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return { ok: true }; });
+  send.then(function (res) {
+      if (!res || !res.ok) {
+        if (res && res.error) {
+          note.innerHTML = esc(res.error) + (res.unavailable && res.unavailable.length ? " Already reserved: " + esc(res.unavailable.join(", ")) + "." : "");
+          if (res.unavailable && res.unavailable.length) loadProducts();
+          return;
+        }
+        throw new Error("failed");
+      }
+      var gone = res.unavailable && res.unavailable.length ? " Note: " + esc(res.unavailable.join(", ")) + " had just been reserved by someone else." : "";
+      note.innerHTML = "Reservation sent. We'll confirm before " + esc(day.split(",")[0]) + "." + gone + ' Want a faster reply? <a href="' + FB_URL + '" target="_blank" rel="noopener">Message us on Facebook</a>.';
+      chosen = {}; update();
+      if (BACKEND_URL) setTimeout(loadProducts, 1500);
+    })
+    .catch(function () {
+      note.innerHTML = (copied ? "We couldn't send it automatically, but your note is copied. " : "We couldn't send it automatically. Copy this note: " + esc(text) + " ") +
+        '<a href="' + FB_URL + '" target="_blank" rel="noopener">Paste it in a Facebook message</a>.';
+    })
+    .then(function () { btn.disabled = false; });
+});
+(function () {
+  var sel = document.getElementById("r-day"), d = new Date();
+  d.setDate(d.getDate() + ((6 - d.getDay() + 7) % 7 || 7));
+  for (var k = 0; k < 4; k++) {
+    var o = document.createElement("option");
+    o.textContent = d.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" });
+    sel.appendChild(o); d.setDate(d.getDate() + 7);
+  }
+})();
+document.querySelectorAll(".fb-link").forEach(function (a) { a.href = FB_URL; });
+loadProducts();
+</script>
+
+</body>
+</html>
