@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T22:54:20.448Z",
+ "updated": "2026-10-15T23:03:46.757Z",
  "products": [
   {
    "id": "P001",
@@ -9,7 +9,10 @@
    "price": 15,
    "description": "Upcycled jeans, wrist strap, zip top.",
    "tag": "Upcycled",
-   "image": "pouch-pink-flower.jpg"
+   "image": "pouch-pink-flower.jpg",
+   "images": [
+    "pouch-pink-flower.jpg"
+   ]
   },
   {
    "id": "P002",
@@ -19,7 +22,10 @@
    "price": 15,
    "description": "Dark wash denim with a pink bow.",
    "tag": "",
-   "image": "pouch-bow.jpg"
+   "image": "pouch-bow.jpg",
+   "images": [
+    "pouch-bow.jpg"
+   ]
   },
   {
    "id": "P003",
@@ -29,7 +35,10 @@
    "price": 15,
    "description": "Made around the original jeans pocket.",
    "tag": "",
-   "image": "pouch-pocket.jpg"
+   "image": "pouch-pocket.jpg",
+   "images": [
+    "pouch-pocket.jpg"
+   ]
   },
   {
    "id": "P004",
@@ -39,7 +48,10 @@
    "price": 15,
    "description": "Light wash with embroidered flowers.",
    "tag": "",
-   "image": "pouch-blue-flowers.jpg"
+   "image": "pouch-blue-flowers.jpg",
+   "images": [
+    "pouch-blue-flowers.jpg"
+   ]
   },
   {
    "id": "P005",
@@ -49,7 +61,10 @@
    "price": 45,
    "description": "Bold embroidery in gold or red.",
    "tag": "Favorite",
-   "image": "backpack-embroidered.jpg"
+   "image": "backpack-embroidered.jpg",
+   "images": [
+    "backpack-embroidered.jpg"
+   ]
   },
   {
    "id": "P006",
@@ -59,7 +74,10 @@
    "price": 20,
    "description": "Bright patterned zip clutch with pompoms.",
    "tag": "",
-   "image": "clutches.jpg"
+   "image": "clutches.jpg",
+   "images": [
+    "clutches.jpg"
+   ]
   },
   {
    "id": "P007",
@@ -69,7 +87,10 @@
    "price": 25,
    "description": "Indigo-and-white geometric print.",
    "tag": "",
-   "image": "bag-hmong-print.jpg"
+   "image": "bag-hmong-print.jpg",
+   "images": [
+    "bag-hmong-print.jpg"
+   ]
   },
   {
    "id": "P008",
@@ -79,7 +100,10 @@
    "price": 8,
    "description": "Clear resin with pressed flowers and color.",
    "tag": "",
-   "image": "resin-keychains.jpg"
+   "image": "resin-keychains.jpg",
+   "images": [
+    "resin-keychains.jpg"
+   ]
   },
   {
    "id": "P009",
@@ -89,7 +113,10 @@
    "price": 8,
    "description": "Metal bookmark with beads and a charm.",
    "tag": "",
-   "image": "bookmarks.jpg"
+   "image": "bookmarks.jpg",
+   "images": [
+    "bookmarks.jpg"
+   ]
   },
   {
    "id": "P010",
@@ -99,7 +126,10 @@
    "price": 12,
    "description": "Stretch bracelet in mixed stones.",
    "tag": "",
-   "image": "bracelets.jpg"
+   "image": "bracelets.jpg",
+   "images": [
+    "bracelets.jpg"
+   ]
   },
   {
    "id": "P011",
@@ -109,7 +139,10 @@
    "price": 12,
    "description": "Silver-tone charms, many designs.",
    "tag": "",
-   "image": "earrings.jpg"
+   "image": "earrings.jpg",
+   "images": [
+    "earrings.jpg"
+   ]
   },
   {
    "id": "P012",
@@ -119,7 +152,10 @@
    "price": 15,
    "description": "Mid wash denim with a lemon patch.",
    "tag": "",
-   "image": "pouch-lemon.jpg"
+   "image": "pouch-lemon.jpg",
+   "images": [
+    "pouch-lemon.jpg"
+   ]
   },
   {
    "id": "P013",
@@ -129,7 +165,10 @@
    "price": 25,
    "description": "Set of coasters in blue resin with glass beads and glitter.",
    "tag": "Set",
-   "image": "resin-blue-coaster-set.jpg"
+   "image": "resin-blue-coaster-set.jpg",
+   "images": [
+    "resin-blue-coaster-set.jpg"
+   ]
   },
   {
    "id": "P014",
@@ -139,7 +178,10 @@
    "price": 12,
    "description": "Clear resin with dried flowers and a beaded rim.",
    "tag": "",
-   "image": "resin-round-flower-coaster.jpg"
+   "image": "resin-round-flower-coaster.jpg",
+   "images": [
+    "resin-round-flower-coaster.jpg"
+   ]
   },
   {
    "id": "P015",
@@ -149,7 +191,10 @@
    "price": 12,
    "description": "Deep red pressed flower in clear resin, beaded edge.",
    "tag": "",
-   "image": "resin-hex-flower-coaster.jpg"
+   "image": "resin-hex-flower-coaster.jpg",
+   "images": [
+    "resin-hex-flower-coaster.jpg"
+   ]
   },
   {
    "id": "P016",
@@ -159,7 +204,10 @@
    "price": 18,
    "description": "Cloud-shaped trinket tray with dried leaves and yellow beads.",
    "tag": "One of a kind",
-   "image": "resin-wavy-tray.jpg"
+   "image": "resin-wavy-tray.jpg",
+   "images": [
+    "resin-wavy-tray.jpg"
+   ]
   },
   {
    "id": "P017",
@@ -169,7 +217,10 @@
    "price": 12,
    "description": "Clear heart dish with a pressed flower and colored beads.",
    "tag": "",
-   "image": "resin-heart-dish.jpg"
+   "image": "resin-heart-dish.jpg",
+   "images": [
+    "resin-heart-dish.jpg"
+   ]
   },
   {
    "id": "P018",
@@ -179,7 +230,10 @@
    "price": 15,
    "description": "Pink resin heart with baby's breath inside.",
    "tag": "",
-   "image": "resin-pink-heart-tray.jpg"
+   "image": "resin-pink-heart-tray.jpg",
+   "images": [
+    "resin-pink-heart-tray.jpg"
+   ]
   },
   {
    "id": "P019",
@@ -189,7 +243,10 @@
    "price": 15,
    "description": "Pink resin tray scattered with pressed petals.",
    "tag": "",
-   "image": "resin-pink-square-tray.jpg"
+   "image": "resin-pink-square-tray.jpg",
+   "images": [
+    "resin-pink-square-tray.jpg"
+   ]
   },
   {
    "id": "P020",
@@ -199,7 +256,10 @@
    "price": 15,
    "description": "Pink resin with tiny green leaves and blue flowers.",
    "tag": "",
-   "image": "resin-pink-hex-tray.jpg"
+   "image": "resin-pink-hex-tray.jpg",
+   "images": [
+    "resin-pink-hex-tray.jpg"
+   ]
   },
   {
    "id": "P021",
@@ -209,7 +269,10 @@
    "price": 8,
    "description": "Resin charm keychain with real flowers, on a gift card.",
    "tag": "",
-   "image": "resin-keychain-cards.jpg"
+   "image": "resin-keychain-cards.jpg",
+   "images": [
+    "resin-keychain-cards.jpg"
+   ]
   },
   {
    "id": "P022",
@@ -219,7 +282,10 @@
    "price": 12,
    "description": "Large silver-tone tree of life drops.",
    "tag": "",
-   "image": "earrings-tree-of-life.jpg"
+   "image": "earrings-tree-of-life.jpg",
+   "images": [
+    "earrings-tree-of-life.jpg"
+   ]
   },
   {
    "id": "P023",
@@ -229,7 +295,10 @@
    "price": 30,
    "description": "Black jeans turned shoulder bag, with a hand-stitched Hmong embroidery panel.",
    "tag": "Upcycled",
-   "image": "bag-black-denim-embroidered.jpg"
+   "image": "bag-black-denim-embroidered.jpg",
+   "images": [
+    "bag-black-denim-embroidered.jpg"
+   ]
   },
   {
    "id": "P024",
@@ -239,7 +308,10 @@
    "price": 28,
    "description": "Mid wash denim tote with frayed heart patches and printed cotton straps.",
    "tag": "",
-   "image": "tote-denim-hearts.jpg"
+   "image": "tote-denim-hearts.jpg",
+   "images": [
+    "tote-denim-hearts.jpg"
+   ]
   },
   {
    "id": "P025",
@@ -249,7 +321,10 @@
    "price": 30,
    "description": "Light denim tote with a frayed top and a red cross-stitch band.",
    "tag": "",
-   "image": "tote-denim-embroidered.jpg"
+   "image": "tote-denim-embroidered.jpg",
+   "images": [
+    "tote-denim-embroidered.jpg"
+   ]
   },
   {
    "id": "P026",
@@ -259,7 +334,10 @@
    "price": 25,
    "description": "Light wash tote made around a big jeans back pocket.",
    "tag": "",
-   "image": "tote-denim-pocket.jpg"
+   "image": "tote-denim-pocket.jpg",
+   "images": [
+    "tote-denim-pocket.jpg"
+   ]
   },
   {
    "id": "P027",
@@ -269,7 +347,10 @@
    "price": 10,
    "description": "Zip pouch with LAOS stitched on the front, many colors.",
    "tag": "",
-   "image": "pouches-laos.jpg"
+   "image": "pouches-laos.jpg",
+   "images": [
+    "pouches-laos.jpg"
+   ]
   },
   {
    "id": "P028",
@@ -279,7 +360,10 @@
    "price": 15,
    "description": "Soft, loose pants with a smocked waist and peacock print. One size.",
    "tag": "",
-   "image": "pants-black-peacock.jpg"
+   "image": "pants-black-peacock.jpg",
+   "images": [
+    "pants-black-peacock.jpg"
+   ]
   },
   {
    "id": "P029",
@@ -289,7 +373,10 @@
    "price": 15,
    "description": "Deep red with an orange and gold flower print. One size.",
    "tag": "",
-   "image": "pants-red-floral.jpg"
+   "image": "pants-red-floral.jpg",
+   "images": [
+    "pants-red-floral.jpg"
+   ]
   },
   {
    "id": "P030",
@@ -299,7 +386,10 @@
    "price": 15,
    "description": "Olive mandala print with a rust waistband. One size.",
    "tag": "",
-   "image": "pants-green-mandala.jpg"
+   "image": "pants-green-mandala.jpg",
+   "images": [
+    "pants-green-mandala.jpg"
+   ]
   },
   {
    "id": "P031",
@@ -309,7 +399,10 @@
    "price": 15,
    "description": "Red mandala print with turquoise elephants. One size.",
    "tag": "",
-   "image": "pants-red-elephant.jpg"
+   "image": "pants-red-elephant.jpg",
+   "images": [
+    "pants-red-elephant.jpg"
+   ]
   },
   {
    "id": "P032",
@@ -319,7 +412,10 @@
    "price": 15,
    "description": "Teal and navy mandala print. One size.",
    "tag": "",
-   "image": "pants-blue-mandala.jpg"
+   "image": "pants-blue-mandala.jpg",
+   "images": [
+    "pants-blue-mandala.jpg"
+   ]
   },
   {
    "id": "P033",
@@ -329,7 +425,10 @@
    "price": 22,
    "description": "Colored resin frame holding a glass tube for a single stem.",
    "tag": "One of a kind",
-   "image": "resin-bud-vases.jpg"
+   "image": "resin-bud-vases.jpg",
+   "images": [
+    "resin-bud-vases.jpg"
+   ]
   },
   {
    "id": "P034",
@@ -339,7 +438,10 @@
    "price": 8,
    "description": "Clear resin pen filled with gold flakes.",
    "tag": "",
-   "image": "resin-pens-gold.jpg"
+   "image": "resin-pens-gold.jpg",
+   "images": [
+    "resin-pens-gold.jpg"
+   ]
   },
   {
    "id": "P035",
@@ -349,7 +451,10 @@
    "price": 15,
    "description": "Long chain with a round or triangle pendant.",
    "tag": "",
-   "image": "necklaces-silver.jpg"
+   "image": "necklaces-silver.jpg",
+   "images": [
+    "necklaces-silver.jpg"
+   ]
   },
   {
    "id": "P036",
@@ -359,17 +464,23 @@
    "price": 5,
    "description": "Bright woven band with a slide tie.",
    "tag": "",
-   "image": "bracelets-woven.jpg"
+   "image": "bracelets-woven.jpg",
+   "images": [
+    "bracelets-woven.jpg"
+   ]
   },
   {
    "id": "P037",
    "status": "available",
    "name": "Fabric elephant keychain",
    "category": "gifts",
-   "price": 6,
+   "price": 7,
    "description": "Little stuffed elephant in patterned cotton, on a key ring.",
    "tag": "",
-   "image": "elephant-keychains.jpg"
+   "image": "elephant-keychains.jpg",
+   "images": [
+    "elephant-keychains.jpg"
+   ]
   },
   {
    "id": "P038",
@@ -379,7 +490,10 @@
    "price": 4,
    "description": "Organizer for your cable and other hard to manage items",
    "tag": "New",
-   "image": "img/products/P038-1792104859339.jpg"
+   "image": "img/products/P038-1792104859339.jpg",
+   "images": [
+    "img/products/P038-1792104859339.jpg"
+   ]
   }
  ]
 }
