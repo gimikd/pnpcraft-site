@@ -258,7 +258,7 @@ dialog.lb::backdrop { background: rgba(20,24,32,.88); }
   <section class="banner" id="reserve">
     <div>
       <h2>Reserve online, <em>pick up</em> Saturday</h2>
-      <p class="lede">See something you like? Add it to your pickup list and send it. We get it by email, confirm with you, and hold it at the Ybor City Market. Nothing to pay until pickup.</p>
+      <p class="lede">See something you like? Add it to your pickup list and send it. We hold it for your pickup day. Reserved is not sold: you pay and pick up at our booth at the Ybor City Market.</p>
     </div>
     <aside class="list" aria-live="polite">
       <h3>Your pickup list</h3>
@@ -268,8 +268,8 @@ dialog.lb::backdrop { background: rgba(20,24,32,.88); }
       <div class="fields">
         <label for="r-name">Your name</label>
         <input id="r-name" type="text" autocomplete="name" placeholder="First and last name">
-        <label for="r-contact">Phone or email</label>
-        <input id="r-contact" type="text" inputmode="email" autocomplete="email" placeholder="So we can confirm, e.g. 813-555-0100">
+        <label for="r-contact">Email or phone</label>
+        <input id="r-contact" type="text" inputmode="email" autocomplete="email" placeholder="Use email to get a confirmation">
         <label for="r-day">Pickup Saturday</label>
         <select id="r-day"></select>
         <input id="r-website" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
@@ -463,7 +463,8 @@ document.getElementById("copy").addEventListener("click", function () {
         throw new Error("failed");
       }
       var gone = res.unavailable && res.unavailable.length ? " Note: " + esc(res.unavailable.join(", ")) + " had just been reserved by someone else." : "";
-      note.innerHTML = "Reservation sent. We'll confirm before " + esc(day.split(",")[0]) + "." + gone + ' Want a faster reply? <a href="' + FB_URL + '" target="_blank" rel="noopener">Message us on Facebook</a>.';
+      note.innerHTML = (contact.indexOf("@") > -1 ? "Reserved. We emailed the details to " + esc(contact) + "." : "Reserved. We'll call or text you to confirm.") +
+        " Reserved is not sold: you pay at the booth." + gone + ' Questions? <a href="' + FB_URL + '" target="_blank" rel="noopener">Message us on Facebook</a>.';
       chosen = {}; update();
       if (BACKEND_URL) setTimeout(loadProducts, 1500);
     })
