@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T22:30:02.427Z",
+ "updated": "2026-10-15T22:31:22.322Z",
  "products": [
   {
    "id": "P001",
@@ -363,7 +363,7 @@
   },
   {
    "id": "P037",
-   "status": "available",
+   "status": "reserved",
    "name": "Fabric elephant keychain",
    "category": "gifts",
    "price": 6,
