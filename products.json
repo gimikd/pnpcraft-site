@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T23:03:46.757Z",
+ "updated": "2026-10-15T23:03:50.080Z",
  "products": [
   {
    "id": "P001",
@@ -474,7 +474,7 @@
    "status": "available",
    "name": "Fabric elephant keychain",
    "category": "gifts",
-   "price": 7,
+   "price": 6,
    "description": "Little stuffed elephant in patterned cotton, on a key ring.",
    "tag": "",
    "image": "elephant-keychains.jpg",
