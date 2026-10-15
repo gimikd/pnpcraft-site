@@ -169,6 +169,16 @@ footer { border-top: 1px solid var(--navy-line); padding-block: 22px 40px; displ
   .collage { aspect-ratio: auto; grid-template-columns: 1fr 1fr; grid-template-rows: 230px 150px; }
   .collage figure:first-child { grid-row: auto; grid-column: span 2; }
 }
+.art { cursor: zoom-in; }
+.art .more { position: absolute; right: 10px; bottom: 10px; background: rgba(29,39,56,.8); color: #fbf6ec; font-size: .66rem; font-weight: 500; padding: 3px 9px; border-radius: 4px; letter-spacing: .04em; }
+dialog.lb { padding: 0; border: 0; background: transparent; width: min(92vw, 880px); max-width: none; max-height: none; overflow: visible; }
+dialog.lb::backdrop { background: rgba(20,24,32,.88); }
+.lb figure { margin: 0; position: relative; }
+.lb img { display: block; width: 100%; max-height: 78vh; object-fit: contain; border-radius: 8px; background: #111; }
+.lb button { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 999px; border: 0; background: rgba(251,246,236,.92); color: var(--navy); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.lb .prev { left: 8px; } .lb .next { right: 8px; }
+.lb .close { top: 8px; right: 8px; transform: none; font-size: 1.3rem; }
+.lb p { color: #fbf6ec; text-align: center; font-size: .82rem; margin: 10px 0 0; }
 @media (prefers-reduced-motion: reduce) { .disc, .art img { transition: none; } }
 </style>
 </head>
@@ -302,6 +312,15 @@ footer { border-top: 1px solid var(--navy-line); padding-block: 22px 40px; displ
   </footer>
 </div>
 
+<dialog class="lb" id="lb" aria-label="Product photos">
+  <figure><img id="lb-img" alt="">
+    <button type="button" class="prev" aria-label="Previous photo">&lsaquo;</button>
+    <button type="button" class="next" aria-label="Next photo">&rsaquo;</button>
+    <button type="button" class="close" aria-label="Close">&times;</button>
+  </figure>
+  <p id="lb-cap"></p>
+</dialog>
+
 <script>
 var FB_URL = "https://www.facebook.com/profile.php?id=100007642459053";
 // Reservations go to the store backend (Google Apps Script web app). Paste its /exec URL here
@@ -325,12 +344,13 @@ function normalize(list) {
     .map(function (p) {
       var price = (p.price === "" || p.price == null || isNaN(Number(p.price))) ? null : Number(p.price);
       return { id: String(p.id), name: String(p.name), cat: CATS.indexOf(p.category) > -1 ? p.category : "gifts", price: price,
-        img: String(p.image), d: p.description || "", held: p.status === "reserved", tag: p.status === "reserved" ? "On hold" : (p.tag || "") };
+        img: String(p.image), imgs: (Array.isArray(p.images) && p.images.length ? p.images : [p.image]).map(String), d: p.description || "", held: p.status === "reserved", tag: p.status === "reserved" ? "On hold" : (p.tag || "") };
     });
 }
 function render() {
   grid.innerHTML = ITEMS.length ? ITEMS.map(function (it) {
-    return '<article class="item" data-cat="' + it.cat + '"><div class="art"><img src="' + esc(it.img) + '" alt="' + esc(it.name) + '" loading="lazy">' +
+    return '<article class="item" data-cat="' + it.cat + '"><div class="art" role="button" tabindex="0" data-photos="' + esc(it.id) + '" aria-label="View photos of ' + esc(it.name) + '"><img src="' + esc(it.img) + '" alt="' + esc(it.name) + '" loading="lazy">' +
+      (it.imgs.length > 1 ? '<span class="more">' + it.imgs.length + ' photos</span>' : '') +
       (it.tag ? '<span class="tag' + (it.held ? ' held' : '') + '">' + esc(it.tag) + '</span>' : '') + '</div>' +
       '<h3>' + esc(it.name) + '</h3><p>' + esc(it.d) + '</p><span class="price">' + money(it.price) + '</span>' +
       (it.held ? '<button class="add" type="button" disabled>On hold</button>'
@@ -364,7 +384,37 @@ function update() {
   document.getElementById("total").textContent = "$" + sum;
   document.getElementById("count").textContent = n;
 }
+/* Photo viewer: tap a product photo to see all its photos */
+var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap"), lbItem = null, lbI = 0, lbX = null;
+function lbShow(i) {
+  var n = lbItem.imgs.length; lbI = (i + n) % n;
+  lbImg.src = lbItem.imgs[lbI];
+  lbImg.alt = lbItem.name + (n > 1 ? ", photo " + (lbI + 1) + " of " + n : "");
+  lbCap.textContent = lbItem.name + (n > 1 ? "  ·  " + (lbI + 1) + " / " + n : "");
+  lb.querySelector(".prev").hidden = lb.querySelector(".next").hidden = n < 2;
+}
+function lbOpen(id) {
+  lbItem = ITEMS.filter(function (x) { return x.id === id; })[0]; if (!lbItem) return;
+  lbShow(0);
+  if (lb.showModal) lb.showModal(); else lb.setAttribute("open", "");
+}
+function lbClose() { if (lb.close) lb.close(); else lb.removeAttribute("open"); }
+lb.querySelector(".prev").addEventListener("click", function () { lbShow(lbI - 1); });
+lb.querySelector(".next").addEventListener("click", function () { lbShow(lbI + 1); });
+lb.querySelector(".close").addEventListener("click", lbClose);
+lb.addEventListener("click", function (e) { if (e.target === lb) lbClose(); });
+lb.addEventListener("keydown", function (e) { if (e.key === "ArrowLeft") lbShow(lbI - 1); if (e.key === "ArrowRight") lbShow(lbI + 1); });
+lb.addEventListener("touchstart", function (e) { lbX = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener("touchend", function (e) {
+  if (lbX == null || !lbItem || lbItem.imgs.length < 2) return;
+  var dx = e.changedTouches[0].clientX - lbX; lbX = null;
+  if (Math.abs(dx) > 40) lbShow(lbI + (dx < 0 ? 1 : -1));
+});
+grid.addEventListener("keydown", function (e) {
+  var a = e.target.closest(".art"); if (a && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); lbOpen(a.getAttribute("data-photos")); }
+});
 grid.addEventListener("click", function (e) {
+  var a = e.target.closest(".art"); if (a) { lbOpen(a.getAttribute("data-photos")); return; }
   var b = e.target.closest(".add"); if (!b) return;
   var id = b.getAttribute("data-id");
   if (chosen[id]) delete chosen[id]; else chosen[id] = true;
