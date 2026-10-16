@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T02:10:57.277Z",
+ "updated": "2026-10-16T02:12:26.916Z",
  "products": [
   {
    "id": "P005",
@@ -215,6 +215,21 @@
     "img/products/P041-1792115837448-2.jpg"
    ],
    "qty": 1
+  },
+  {
+   "id": "P042",
+   "status": "available",
+   "name": "Book mark",
+   "category": "denim",
+   "price": 7,
+   "description": "",
+   "tag": "New",
+   "image": "img/products/P042-1792116745501-1.jpg",
+   "images": [
+    "img/products/P042-1792116745501-1.jpg",
+    "img/products/P042-1792116745501-2.jpg"
+   ],
+   "qty": 30
   }
  ]
 }
