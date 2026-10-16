@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T02:19:10.633Z",
+ "updated": "2026-10-16T02:21:16.653Z",
  "products": [
   {
    "id": "P005",
@@ -247,6 +247,22 @@
     "img/products/P043-1792117102968-4.jpg",
     "img/products/P043-1792117102969-5.jpg",
     "img/products/P043-1792117102971-6.jpg"
+   ],
+   "qty": 1
+  },
+  {
+   "id": "P044",
+   "status": "available",
+   "name": "Denim bag",
+   "category": "denim",
+   "price": 30,
+   "description": "",
+   "tag": "Up recycle",
+   "image": "img/products/P044-1792117276055-1.jpg",
+   "images": [
+    "img/products/P044-1792117276055-1.jpg",
+    "img/products/P044-1792117276058-2.jpg",
+    "img/products/P044-1792117276059-3.jpg"
    ],
    "qty": 1
   }
