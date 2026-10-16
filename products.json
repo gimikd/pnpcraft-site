@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T00:00:59.625Z",
+ "updated": "2026-10-16T00:13:11.015Z",
  "products": [
   {
    "id": "P038",
@@ -12,7 +12,8 @@
    "image": "img/products/P038-1792104859339.jpg",
    "images": [
     "img/products/P038-1792104859339.jpg"
-   ]
+   ],
+   "qty": 0
   }
  ]
 }
