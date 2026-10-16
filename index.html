@@ -464,7 +464,7 @@ document.getElementById("copy").addEventListener("click", function () {
   btn.disabled = true; note.textContent = "Sending your reservation...";
   var hp = (document.getElementById("r-website") || {}).value || "";
   var send = BACKEND_URL
-    ? fetch(BACKEND_URL, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+    ? fetch(BACKEND_URL, { method: "POST", credentials: "omit", headers: { "Content-Type": "text/plain;charset=utf-8" },
         body: JSON.stringify({ name: name, contact: contact, pickup_day: day, website: hp, items: picks.map(function (i) { return { id: i.id, qty: chosen[i.id] }; }) }) })
         .then(function (r) { return r.json(); })
     : fetch(FORMSUBMIT_URL, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
@@ -488,6 +488,12 @@ document.getElementById("copy").addEventListener("click", function () {
       if (BACKEND_URL) setTimeout(loadProducts, 1500);
     })
     .catch(function () {
+      if (BACKEND_URL) {
+        note.innerHTML = "We couldn't confirm that it went through. Please don't send it again yet: " +
+          (contact.indexOf("@") > -1 ? "check your email in a few minutes. " : "") + 'If nothing arrives, <a href="' + FB_URL + '" target="_blank" rel="noopener">message us on Facebook</a>.';
+        setTimeout(loadProducts, 3000);
+        return;
+      }
       note.innerHTML = (copied ? "We couldn't send it automatically, but your note is copied. " : "We couldn't send it automatically. Copy this note: " + esc(text) + " ") +
         '<a href="' + FB_URL + '" target="_blank" rel="noopener">Paste it in a Facebook message</a>.';
     })
