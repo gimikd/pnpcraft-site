@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T02:01:09.185Z",
+ "updated": "2026-10-16T02:02:04.745Z",
  "products": [
   {
    "id": "P034",
@@ -12,6 +12,20 @@
    "image": "resin-pens-gold.jpg",
    "images": [
     "resin-pens-gold.jpg"
+   ],
+   "qty": 1
+  },
+  {
+   "id": "P035",
+   "status": "available",
+   "name": "Silver-tone pendant necklace",
+   "category": "jewelry",
+   "price": 35,
+   "description": "Long chain with a round or triangle pendant made from old silver coins from Laos",
+   "tag": "",
+   "image": "necklaces-silver.jpg",
+   "images": [
+    "necklaces-silver.jpg"
    ],
    "qty": 1
   },
