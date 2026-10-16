@@ -356,7 +356,7 @@ function render() {
     return '<article class="item" data-cat="' + it.cat + '"><div class="art" role="button" tabindex="0" data-photos="' + esc(it.id) + '" aria-label="View photos of ' + esc(it.name) + '"><img src="' + esc(it.img) + '" alt="' + esc(it.name) + '" loading="lazy">' +
       (it.imgs.length > 1 ? '<span class="more">' + it.imgs.length + ' photos</span>' : '') +
       (it.tag ? '<span class="tag' + (it.held ? ' held' : '') + '">' + esc(it.tag) + '</span>' : '') + '</div>' +
-      '<h3>' + esc(it.name) + '</h3><p>' + esc(it.d) + '</p><span class="price">' + money(it.price) + '</span>' + (!it.held && it.qty > 1 ? '<span class="stock">' + it.qty + ' available</span>' : '') +
+      '<h3>' + esc(it.name) + '</h3><p>' + esc(it.d) + '</p><span class="price">' + money(it.price) + '</span>' +
       (it.held ? '<button class="add" type="button" disabled>On hold</button>'
                : '<button class="add" type="button" data-id="' + esc(it.id) + '" aria-pressed="false">Reserve</button>') + '</article>';
   }).join("") : '<p class="empty-shop">New pieces are on the way. Check back soon, or visit the booth on Saturday.</p>';
