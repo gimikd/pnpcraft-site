@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T02:07:10.398Z",
+ "updated": "2026-10-16T02:08:16.306Z",
  "products": [
   {
    "id": "P013",
@@ -42,6 +42,20 @@
     "pouches-laos.jpg"
    ],
    "qty": 40
+  },
+  {
+   "id": "P030",
+   "status": "available",
+   "name": "Elephant pants, green mandala. One size",
+   "category": "clothing",
+   "price": 15,
+   "description": "Olive mandala print with a rust waistband. One size.",
+   "tag": "New",
+   "image": "pants-green-mandala.jpg",
+   "images": [
+    "pants-green-mandala.jpg"
+   ],
+   "qty": 5
   },
   {
    "id": "P031",
