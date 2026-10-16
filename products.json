@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T00:58:56.470Z",
+ "updated": "2026-10-16T01:14:37.658Z",
  "products": [
   {
    "id": "P037",
@@ -40,6 +40,20 @@
    "image": "img/products/P039-1792112194785-1.jpg",
    "images": [
     "img/products/P039-1792112194785-1.jpg"
+   ],
+   "qty": 1
+  },
+  {
+   "id": "P040",
+   "status": "available",
+   "name": "Upcycled Jean Bag",
+   "category": "denim",
+   "price": 35,
+   "description": "Denim bag with unique front pattern.",
+   "tag": "New",
+   "image": "img/products/P040-1792113276382-1.jpg",
+   "images": [
+    "img/products/P040-1792113276382-1.jpg"
    ],
    "qty": 1
   }
