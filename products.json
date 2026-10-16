@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T02:12:26.916Z",
+ "updated": "2026-10-16T02:18:24.945Z",
  "products": [
   {
    "id": "P005",
@@ -230,6 +230,25 @@
     "img/products/P042-1792116745501-2.jpg"
    ],
    "qty": 30
+  },
+  {
+   "id": "P043",
+   "status": "available",
+   "name": "Denim crush/pouch",
+   "category": "denim",
+   "price": 23,
+   "description": "",
+   "tag": "Up recycled",
+   "image": "img/products/P043-1792117102963-1.jpg",
+   "images": [
+    "img/products/P043-1792117102963-1.jpg",
+    "img/products/P043-1792117102965-2.jpg",
+    "img/products/P043-1792117102966-3.jpg",
+    "img/products/P043-1792117102968-4.jpg",
+    "img/products/P043-1792117102969-5.jpg",
+    "img/products/P043-1792117102971-6.jpg"
+   ],
+   "qty": 1
   }
  ]
 }
