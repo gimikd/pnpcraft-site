@@ -109,6 +109,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
 .tag { position: absolute; top: 10px; left: 10px; background: var(--pink); color: #fff; font-size: .66rem; font-weight: 500; padding: 3px 9px; border-radius: 4px; letter-spacing: .04em; }
 .item h3 { font: 500 .86rem var(--f-body); margin-top: 10px; }
 .item p { font-size: .76rem; color: var(--muted); line-height: 1.5; }
+.item .stock { font-size: .72rem; color: var(--muted); }
 .price { font-weight: 600; font-size: 1.05rem; font-variant-numeric: tabular-nums; margin-top: 4px; }
 .add { align-self: flex-start; margin-top: 6px; font: 500 .78rem var(--f-body); padding: 8px 18px; border-radius: 6px; border: 0; background: var(--gold-bright); color: var(--ink); cursor: pointer; }
 .add:hover { filter: brightness(.95); }
@@ -343,7 +344,7 @@ function normalize(list) {
     .map(function (p) {
       var price = (p.price === "" || p.price == null || isNaN(Number(p.price))) ? null : Number(p.price);
       return { id: String(p.id), name: String(p.name), cat: CATS.indexOf(p.category) > -1 ? p.category : "gifts", price: price,
-        img: String(p.image), imgs: (Array.isArray(p.images) && p.images.length ? p.images : [p.image]).map(String), d: p.description || "", held: p.status === "reserved", tag: p.status === "reserved" ? "On hold" : (p.tag || "") };
+        img: String(p.image), imgs: (Array.isArray(p.images) && p.images.length ? p.images : [p.image]).map(String), d: p.description || "", qty: isFinite(Number(p.qty)) && p.qty !== "" && p.qty != null ? Number(p.qty) : 1, held: p.status === "reserved", tag: p.status === "reserved" ? "On hold" : (p.tag || "") };
     });
 }
 function render() {
@@ -351,7 +352,7 @@ function render() {
     return '<article class="item" data-cat="' + it.cat + '"><div class="art" role="button" tabindex="0" data-photos="' + esc(it.id) + '" aria-label="View photos of ' + esc(it.name) + '"><img src="' + esc(it.img) + '" alt="' + esc(it.name) + '" loading="lazy">' +
       (it.imgs.length > 1 ? '<span class="more">' + it.imgs.length + ' photos</span>' : '') +
       (it.tag ? '<span class="tag' + (it.held ? ' held' : '') + '">' + esc(it.tag) + '</span>' : '') + '</div>' +
-      '<h3>' + esc(it.name) + '</h3><p>' + esc(it.d) + '</p><span class="price">' + money(it.price) + '</span>' +
+      '<h3>' + esc(it.name) + '</h3><p>' + esc(it.d) + '</p><span class="price">' + money(it.price) + '</span>' + (!it.held && it.qty > 1 ? '<span class="stock">' + it.qty + ' available</span>' : '') +
       (it.held ? '<button class="add" type="button" disabled>On hold</button>'
                : '<button class="add" type="button" data-id="' + esc(it.id) + '" aria-pressed="false">Reserve</button>') + '</article>';
   }).join("") : '<p class="empty-shop">New pieces are on the way. Check back soon, or visit the booth on Saturday.</p>';
