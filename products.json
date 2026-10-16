@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T01:14:37.658Z",
+ "updated": "2026-10-16T01:22:11.589Z",
  "products": [
   {
    "id": "P037",
@@ -54,6 +54,20 @@
    "image": "img/products/P040-1792113276382-1.jpg",
    "images": [
     "img/products/P040-1792113276382-1.jpg"
+   ],
+   "qty": 1
+  },
+  {
+   "id": "P041",
+   "status": "available",
+   "name": "Cute Floral Upcycled Bag",
+   "category": "denim",
+   "price": 35,
+   "description": "Cute flower pattern design with pink handles.",
+   "tag": "New",
+   "image": "img/products/P041-1792113730649-1.jpg",
+   "images": [
+    "img/products/P041-1792113730649-1.jpg"
    ],
    "qty": 1
   }
