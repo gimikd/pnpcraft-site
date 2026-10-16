@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T01:58:35.223Z",
+ "updated": "2026-10-16T01:59:27.861Z",
  "products": [
   {
    "id": "P037",
@@ -39,7 +39,8 @@
    "tag": "New",
    "image": "img/products/P039-1792112194785-1.jpg",
    "images": [
-    "img/products/P039-1792112194785-1.jpg"
+    "img/products/P039-1792112194785-1.jpg",
+    "img/products/P039-1792115966981-2.jpg"
    ],
    "qty": 1
   },
