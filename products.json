@@ -1,6 +1,20 @@
 {
- "updated": "2026-10-16T02:08:46.193Z",
+ "updated": "2026-10-16T02:10:57.277Z",
  "products": [
+  {
+   "id": "P005",
+   "status": "available",
+   "name": "Embroidered backpack",
+   "category": "bags",
+   "price": 40,
+   "description": "Bold embroidery in gold or red.",
+   "tag": "New",
+   "image": "backpack-embroidered.jpg",
+   "images": [
+    "backpack-embroidered.jpg"
+   ],
+   "qty": 1
+  },
   {
    "id": "P013",
    "status": "available",
