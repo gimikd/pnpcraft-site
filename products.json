@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-16T02:08:16.306Z",
+ "updated": "2026-10-16T02:08:46.193Z",
  "products": [
   {
    "id": "P013",
@@ -34,12 +34,13 @@
    "status": "available",
    "name": "LAOS embroidered coin pouch",
    "category": "bags",
-   "price": 10,
+   "price": 8,
    "description": "Zip pouch with LAOS stitched on the front, many colors.",
    "tag": "New",
    "image": "pouches-laos.jpg",
    "images": [
-    "pouches-laos.jpg"
+    "pouches-laos.jpg",
+    "img/products/P027-1792116525131-2.jpg"
    ],
    "qty": 40
   },
