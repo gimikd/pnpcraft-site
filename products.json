@@ -1,6 +1,20 @@
 {
- "updated": "2026-10-16T02:04:44.987Z",
+ "updated": "2026-10-16T02:06:15.410Z",
  "products": [
+  {
+   "id": "P023",
+   "status": "available",
+   "name": "Black denim shoulder bag",
+   "category": "denim",
+   "price": 30,
+   "description": "Black jeans turned shoulder bag, with a hand-stitched Hmong embroidery panel.",
+   "tag": "Upcycled",
+   "image": "bag-black-denim-embroidered.jpg",
+   "images": [
+    "bag-black-denim-embroidered.jpg"
+   ],
+   "qty": 1
+  },
   {
    "id": "P027",
    "status": "available",
